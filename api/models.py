@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator # Definir valores minimos e máximos de latitude e longitude
+
 
 class User(AbstractUser):
     class ChoicesType(models.TextChoices):
@@ -35,7 +36,7 @@ class User(AbstractUser):
 
     
 class Environment(models.Model):
-    point = models.CharField(max_length=20, primary_key=True)
+    point = models.CharField(max_length=20, unique=True)
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     
@@ -45,6 +46,8 @@ class Environment(models.Model):
     def __str__(self):
         return self.name
     
+    
+# A classe EquipamentModel serve para armazenar o modelo do microcontrolador, onde puxa como FK em Microcontroller
 class EquipmentModel(models.Model):
     name = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=200, blank=True)

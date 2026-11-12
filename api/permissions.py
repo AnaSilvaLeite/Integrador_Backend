@@ -1,22 +1,42 @@
+
 from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 class IsSuperUser(BasePermission):
 
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.type == 'SUPERUSER'
+        return (
+            request.user.is_authenticated
+            and request.user.is_superuser
+        )
 
 
 class IsAdministrator(BasePermission):
 
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.type in ['SUPERUSER', 'ADMINISTRATOR']
+        return (
+            request.user.is_authenticated
+            and (
+                request.user.is_superuser
+                or request.user.type in [
+                    'SUPERUSER',
+                    'ADMINISTRATOR'
+                ]
+            )
+        )
 
 
 class IsUser(BasePermission):
 
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.type in ['SUPERUSER', 'ADMINISTRATOR', 'USER']
+        return (
+            request.user.is_authenticated
+            and request.user.type in [
+                'SUPERUSER',
+                'ADMINISTRATOR',
+                'USER'
+            ]
+        )
 
 
 class IsAdministratorOrReadOnly(BasePermission):
@@ -28,7 +48,13 @@ class IsAdministratorOrReadOnly(BasePermission):
         if request.method in SAFE_METHODS:
             return True
 
-        return request.user.type in ['SUPERUSER', 'ADMINISTRATOR']
+        return (
+            request.user.is_superuser
+            or request.user.type in [
+                'SUPERUSER',
+                'ADMINISTRATOR'
+            ]
+        )
 
 
 class IsSuperUserOrReadOnly(BasePermission):
@@ -40,4 +66,4 @@ class IsSuperUserOrReadOnly(BasePermission):
         if request.method in SAFE_METHODS:
             return True
 
-        return request.user.type == 'SUPERUSER'
+        return request.user.is_superuser

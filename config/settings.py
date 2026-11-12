@@ -10,19 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
-from pathlib import Path
-from datetime import timedelta
+from pathlib import Path # Utilizada para trabalhar com caminhos de arquivos e pastas.
+from datetime import timedelta # Permite representar intervalos de tempo
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 SECRET_KEY = 'django-insecure-%0au=m2-r$=89vs@^h@)*h3eb=r_ynxwm3rukt-fc+@5+6*kgp'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 
 INSTALLED_APPS = [
@@ -38,6 +35,7 @@ INSTALLED_APPS = [
     
     'api',
 ]
+
 
 AUTH_USER_MODEL = 'api.User'
 
@@ -72,7 +70,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
-
+# Configurações sobre o banco
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -131,10 +129,12 @@ REST_FRAMEWORK = {
     ),
 }
 
+# Configurações Token
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=25),
     'REFRESH_TOKEN_LIFETIME': timedelta(hours=12),
 }
 
+# Configurações sobre as fotos dos usuários
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
