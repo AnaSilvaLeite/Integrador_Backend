@@ -1,0 +1,21 @@
+function,model,unit_measureament,status,microcontroller_mac_address
+temperature,Sensor de temperatura,°C,ACTIVE,AA:BB:CC:00:00:01
+humidity,Sensor de umidade,%,ACTIVE,AA:BB:CC:00:00:01
+luminosity,Sensor de luminosidade,lux,ACTIVE,AA:BB:CC:00:00:01
+counter,Sensor contador,un,ACTIVE,AA:BB:CC:00:00:01
+temperature,Sensor de temperatura,°C,ACTIVE,AA:BB:CC:00:00:02
+humidity,Sensor de umidade,%,ACTIVE,AA:BB:CC:00:00:02
+luminosity,Sensor de luminosidade,lux,ACTIVE,AA:BB:CC:00:00:02
+counter,Sensor contador,un,ACTIVE,AA:BB:CC:00:00:02
+temperature,Sensor de temperatura,°C,ACTIVE,AA:BB:CC:00:00:03
+humidity,Sensor de umidade,%,ACTIVE,AA:BB:CC:00:00:03
+luminosity,Sensor de luminosidade,lux,ACTIVE,AA:BB:CC:00:00:03
+counter,Sensor contador,un,ACTIVE,AA:BB:CC:00:00:03
+temperature,Sensor de temperatura,°C,ACTIVE,AA:BB:CC:00:00:04
+humidity,Sensor de umidade,%,ACTIVE,AA:BB:CC:00:00:04
+luminosity,Sensor de luminosidade,lux,ACTIVE,AA:BB:CC:00:00:04
+counter,Sensor contador,un,ACTIVE,AA:BB:CC:00:00:04
+temperature,Sensor de temperatura,°C,ACTIVE,AA:BB:CC:00:00:05
+humidity,Sensor de umidade,%,ACTIVE,AA:BB:CC:00:00:05
+luminosity,Sensor de luminosidade,lux,ACTIVE,AA:BB:CC:00:00:05
+counter,Sensor contador,un,ACTIVE,AA:BB:CC:00:00:05

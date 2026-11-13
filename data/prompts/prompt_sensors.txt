@@ -1,0 +1,25 @@
+
+Gere dados fictícios em formato CSV para a tabela Sensor de um
+sistema de monitoramento ambiental escolar.
+
+O sistema possui cinco microcontroladores, identificados pelos MACs:
+AA:BB:CC:00:00:01
+AA:BB:CC:00:00:02
+AA:BB:CC:00:00:03
+AA:BB:CC:00:00:04
+AA:BB:CC:00:00:05
+
+Cada microcontrolador deve possuir quatro sensores:
+- temperature, unidade °C
+- humidity, unidade %
+- luminosity, unidade lux
+- counter, unidade un
+
+Campos:
+function, model, unit_measureament, status,
+microcontroller_mac_address.
+
+Utilize status ACTIVE para todos os sensores.
+Gere exatamente 20 registros, quatro para cada microcontrolador.
+Não inclua IDs, pois serão gerados pelo Django.
+Utilize UTF-8 e separe as colunas por vírgulas.

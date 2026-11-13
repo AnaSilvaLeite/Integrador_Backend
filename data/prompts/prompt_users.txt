@@ -1,0 +1,10 @@
+Crie os dados iniciais dos usuários do sistema de monitoramento ambiental.
+
+Regras:
+- Respeitar os campos do modelo User.
+- Não duplicar o usuário lin, pois ele já está cadastrado no banco.
+- Criar o usuário senai com a senha 123456.
+- Utilizar os tipos de usuário permitidos: SUPERUSER, ADMINISTRATOR ou USER.
+- Preencher corretamente username, name, email, type e password.
+- As senhas devem ser armazenadas com hash utilizando o método set_password do Django, nunca diretamente em texto puro no banco.
+- Gerar um arquivo CSV separado por vírgulas.

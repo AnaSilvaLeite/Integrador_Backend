@@ -1,0 +1,13 @@
+
+Gere dados fictícios em formato CSV para a tabela EquipmentModel
+de um sistema de monitoramento ambiental escolar.
+
+A tabela possui os campos:
+- name: nome do modelo, com até 50 caracteres e valor único.
+- description: descrição do modelo, com até 200 caracteres.
+
+O projeto utiliza o microcontrolador ESP8266 nos pontos de
+monitoramento ambiental.
+
+Gere registros coerentes com o projeto.
+Utilize UTF-8 e separe as colunas por vírgulas.

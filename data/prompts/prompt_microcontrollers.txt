@@ -1,0 +1,17 @@
+
+Gere cinco registros fictícios em formato CSV para a tabela
+Microcontroller de um sistema de monitoramento ambiental escolar.
+
+Campos:
+- mac_address: endereço MAC único com até 20 caracteres.
+- latitude: coordenada entre -90 e 90.
+- longitude: coordenada entre -180 e 180.
+- observation: observação com até 200 caracteres.
+- status: ACTIVE ou INACTIVE.
+- environment_point: identificador do ambiente relacionado.
+- equipment_model_name: nome do modelo de equipamento relacionado.
+
+Utilize os cinco ambientes PONTO01 até PONTO05 e o modelo ESP8266.
+Cada microcontrolador deve estar associado a um ambiente diferente.
+Não inclua registration_date, pois o Django gera esse campo automaticamente.
+Utilize UTF-8 e separe as colunas por vírgulas.

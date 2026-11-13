@@ -1,0 +1,14 @@
+
+Gere dados fictícios em formato CSV para a tabela Environment
+de um sistema de monitoramento ambiental escolar.
+
+O sistema possui cinco pontos de monitoramento próximos aos
+laboratórios de informática.
+
+A tabela possui os campos:
+- point: identificador único com até 20 caracteres.
+- name: nome do ambiente com até 100 caracteres.
+- description: descrição com até 200 caracteres.
+
+Gere cinco registros coerentes, sem repetir os identificadores.
+Utilize UTF-8 e separe as colunas por vírgulas.
