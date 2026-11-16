@@ -52,14 +52,15 @@ class SensorSerializer(serializers.ModelSerializer):
 
         return data
         
+
 class ReadingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reading
         fields = '__all__'
 
-    # Método exclusivo para validar o campo sensor, onde caso verifica os statos do sensor e microcontrolador
-    # Caso o Sensor ou o Microcontrolador estiver inativo irá mostrar mensagem de erro
+    # Funcionalidade extra 4
+    # Impede leituras em sensores ou microcontroladores inativos
     def validate_sensor(self, sensor):
 
         if sensor.status == 'INACTIVE':
@@ -73,7 +74,46 @@ class ReadingSerializer(serializers.ModelSerializer):
             )
 
         return sensor
-        
+
+    # Impede o cadastro de leituras duplicadas
+    def validate(self, data):
+
+        sensor = data.get(
+            'sensor',
+            self.instance.sensor if self.instance else None
+        )
+
+        registration_date = data.get(
+            'registration_date',
+            self.instance.registration_date if self.instance else None
+        )
+
+        measured_value = data.get(
+            'measured_value',
+            self.instance.measured_value if self.instance else None
+        )
+
+        if sensor and registration_date is not None and measured_value is not None:
+
+            readings = Reading.objects.filter(
+                sensor=sensor,
+                registration_date=registration_date,
+                measured_value=measured_value
+            )
+
+            # Na atualização, ignora a própria leitura
+            if self.instance:
+                readings = readings.exclude(id=self.instance.id)
+
+            if readings.exists():
+                raise serializers.ValidationError({
+                    'non_field_errors': [
+                        'Esta leitura já está cadastrada para este sensor, data e valor.'
+                    ]
+                })
+
+        return data
+
 
 class UserSerializer(serializers.ModelSerializer):
 
