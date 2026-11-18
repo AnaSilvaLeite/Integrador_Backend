@@ -1,0 +1,21 @@
+Com base no arquivo sensors.csv e no model Sensor do Django, gere um script SQL chamado 05_sensors.sql.
+
+O script deve:
+
+Inserir os registros do CSV na tabela sensor.
+
+Considerar os campos function, model, unit_measureament e status.
+
+Relacionar cada sensor ao microcontrolador correspondente utilizando microcontroller_mac_address.
+
+Recuperar o ID do microcontrolador por meio de uma consulta SQL, sem assumir IDs fixos.
+
+Respeitar as opções de função, unidade de medida e status definidas no model.
+
+Evitar duplicações de sensores para o mesmo microcontrolador e função.
+
+Respeitar as chaves estrangeiras.
+
+Utilizar comandos SQL compatíveis com MySQL.
+
+Não criar tabelas, pois elas já são criadas pelas migrations do Django.

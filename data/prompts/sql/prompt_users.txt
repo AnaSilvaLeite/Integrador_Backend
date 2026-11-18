@@ -1,0 +1,19 @@
+Com base no arquivo users.csv e na estrutura do model User do Django, gere um script SQL chamado 01_users.sql.
+
+O script deve:
+
+Inserir os registros do CSV na tabela user.
+
+Considerar os campos personalizados name, email, type e photo.
+
+Considerar também os campos obrigatórios herdados de AbstractUser.
+
+Armazenar senhas utilizando hashes compatíveis com Django, nunca em texto puro.
+
+Evitar a duplicação de usuários já cadastrados.
+
+Respeitar os tipos de dados e restrições definidos no model.
+
+Utilizar comandos INSERT INTO compatíveis com MySQL.
+
+Não criar tabelas, pois elas já são criadas pelas migrations do Django.

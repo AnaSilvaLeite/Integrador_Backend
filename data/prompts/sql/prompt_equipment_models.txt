@@ -1,0 +1,15 @@
+Com base no arquivo equipment_models.csv e no model EquipmentModel do Django, gere um script SQL chamado 03_equipment_models.sql.
+
+O script deve:
+
+Inserir os registros do CSV na tabela equipment_model.
+
+Considerar os campos name e description.
+
+Respeitar a restrição de unicidade do campo name.
+
+Evitar inserir modelos que já estejam cadastrados.
+
+Utilizar comandos SQL compatíveis com MySQL.
+
+Não criar tabelas, pois elas já são criadas pelas migrations do Django.

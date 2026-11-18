@@ -1,0 +1,23 @@
+Com base no arquivo microcontrollers.csv e no model Microcontroller do Django, gere um script SQL chamado 04_microcontrollers.sql.
+
+O script deve:
+
+Inserir os registros do CSV na tabela microcontroller.
+
+Considerar os campos mac_address, latitude, longitude, observation e status.
+
+Relacionar cada microcontrolador ao ambiente correspondente utilizando environment_point.
+
+Relacionar cada microcontrolador ao modelo de equipamento utilizando equipment_model_name.
+
+Recuperar os IDs das tabelas relacionadas por meio de consultas SQL, sem assumir IDs fixos.
+
+Preencher registration_date de acordo com a estrutura da tabela.
+
+Evitar duplicações utilizando o endereço MAC como identificador único.
+
+Respeitar as chaves estrangeiras e restrições do banco.
+
+Utilizar comandos SQL compatíveis com MySQL.
+
+Não criar tabelas, pois elas já são criadas pelas migrations do Django.

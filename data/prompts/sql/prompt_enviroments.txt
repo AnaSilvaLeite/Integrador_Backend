@@ -1,0 +1,15 @@
+Com base no arquivo environments.csv e no model Environment do Django, gere um script SQL chamado 02_environments.sql.
+
+O script deve:
+
+Inserir os registros do CSV na tabela environment.
+
+Considerar os campos point, name e description.
+
+Respeitar a restrição de unicidade do campo point.
+
+Evitar inserir ambientes que já estejam cadastrados.
+
+Utilizar comandos SQL compatíveis com MySQL.
+
+Não criar tabelas, pois elas já são criadas pelas migrations do Django.

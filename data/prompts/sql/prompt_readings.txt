@@ -1,0 +1,21 @@
+Com base no arquivo readings.csv e no model Reading do Django, gere um script SQL chamado 06_readings.sql.
+
+O script deve:
+
+Inserir os registros do CSV na tabela reading.
+
+Considerar os campos registration_date, sensor_function, microcontroller_mac_address e measured_value.
+
+Identificar o sensor correspondente utilizando a função do sensor e o endereço MAC do microcontrolador.
+
+Recuperar o ID do sensor por meio de consultas SQL, sem assumir IDs fixos.
+
+Preservar exatamente as datas, horários e valores medidos presentes no CSV, considerando corretamente a configuração de fuso horário do projeto.
+
+Evitar duplicações de leituras considerando o sensor, a data de registro e o valor medido.
+
+Respeitar as chaves estrangeiras e os tipos de dados definidos no model.
+
+Utilizar comandos SQL compatíveis com MySQL.
+
+Não criar tabelas, pois elas já são criadas pelas migrations do Django.
