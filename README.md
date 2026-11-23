@@ -75,10 +75,10 @@ Principais entidades
 
 4. Pré-requisitos
 Antes de iniciar, instale:
-1. Python (recomenda-se Python 3.12 ou 3.13).
-2. MySQL Server e um cliente, como MySQL Workbench.
-3. Git (opcional, caso clone o repositório).
-5. Instalação e configuração local
+- Python (recomenda-se Python 3.12 ou 3.13).
+- MySQL Server e um cliente, como MySQL Workbench.
+- Git (opcional, caso clone o repositório).
+- Instalação e configuração local
 Os comandos abaixo consideram Windows com PowerShell e devem ser executados no diretório que contém manage.py.
 
 5.1. Obter o projeto
@@ -136,12 +136,12 @@ data/csv/readings.csv	Leituras simuladas
 
 6.2. População alternativa por SQL
 Existem scripts SQL numerados em data/sql/. Caso opte por executar a população por SQL, utilize a ordem abaixo, após executar as migrações do Django:
-1. 01_users.sql
-2. 02_environments.sql
-3. 03_equipment_models.sql
-4. 04_microcontrollers.sql
-5. 05_sensors.sql
-6. 06_readings.sql
+- 01_users.sql
+- 02_environments.sql
+- 03_equipment_models.sql
+- 04_microcontrollers.sql
+- 05_sensors.sql
+- 06_readings.sql
    
 7. Executar a API
 Com o ambiente virtual ativado e o banco configurado:
@@ -204,11 +204,11 @@ GET /api/readings/statistics/?sensor=1&start_date=2026-10-01&end_date=2026-10-31
 
 9. Funcionalidades extras implementadas
 O código analisado contém as seguintes funcionalidades extras do enunciado:
-1. Ordenação de leituras: ordena por data/hora ou valor medido usando ?ordering=registration_date, ?ordering=-registration_date ou ?ordering=measured_value.
-2. Resumo estatístico por sensor: endpoint /api/readings/statistics/, com total, valor mínimo, máximo e média, podendo limitar o período.
-3. Prevenção de leituras duplicadas: o serializer impede duplicidade considerando sensor, data/hora e valor medido.
-4. Geração de leituras simuladas: comando personalizado gerar_leituras, que cria medições para sensores ativos ligados a microcontroladores ativos.
-5. Consulta rápida de leituras: endpoints para consultar as últimas 24 horas e a leitura mais recente de cada sensor.
+- Ordenação de leituras: ordena por data/hora ou valor medido usando ?ordering=registration_date, ?ordering=-registration_date ou ?ordering=measured_value.
+- Resumo estatístico por sensor: endpoint /api/readings/statistics/, com total, valor mínimo, máximo e média, podendo limitar o período.
+- Prevenção de leituras duplicadas: o serializer impede duplicidade considerando sensor, data/hora e valor medido.
+- Geração de leituras simuladas: comando personalizado gerar_leituras, que cria medições para sensores ativos ligados a microcontroladores ativos.
+- Consulta rápida de leituras: endpoints para consultar as últimas 24 horas e a leitura mais recente de cada sensor.
 
 
 Projeto: Integrador Backend — API de Monitoramento Ambiental
