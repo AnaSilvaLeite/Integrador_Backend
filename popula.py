@@ -1,18 +1,18 @@
-import os
-import csv
+import os #Configura variáveis de ambiente.
+import csv #Lê os arquivos CSV.
 import django
 
-from pathlib import Path
+from pathlib import Path #Trabalha com caminhos de arquivos e pastas.
 from datetime import datetime
 from decimal import Decimal
 
-# Configuração do Django
-BASE_DIR = Path(__file__).resolve().parent
+
+BASE_DIR = Path(__file__).resolve().parent #Identifica a pasta onde está o popula.py.
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 
-from django.db import transaction
+from django.db import transaction # Controlar transações no banco de dados.
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from django.utils import timezone
@@ -27,7 +27,7 @@ from api.models import (
 
 User = get_user_model()
 
-DATA_DIR = BASE_DIR / "data" / "csv"
+DATA_DIR = BASE_DIR / "data" / "csv"  #Define onde o programa procura os arquivos CSV.
 
 
 # LEITURA DOS ARQUIVOS CSV
@@ -44,9 +44,9 @@ def ler_csv(nome_arquivo):
 
     with open(
         caminho,
-        mode="r",
-        encoding="utf-8-sig",
-        newline=""
+        mode="r", # Abre o arquivo somente para leitura.
+        encoding="utf-8-sig", # Evita problemas com caracteres e cabeçalhos.
+        newline="" # Permite que a biblioteca CSV controle corretamente as quebras de linha.
     ) as arquivo:
 
         # Lê somente a primeira linha para identificar
@@ -58,7 +58,7 @@ def ler_csv(nome_arquivo):
             raise ValueError(
                 f"O arquivo {nome_arquivo} está vazio."
             )
-
+        # Identificação automática do separador
         try:
             delimitador = csv.Sniffer().sniff(
                 cabecalho,
@@ -71,6 +71,7 @@ def ler_csv(nome_arquivo):
             f"Separador identificado: {repr(delimitador)}"
         )
 
+        # Transforma cada linha do CSV em um dicionário.
         leitor = csv.DictReader(
             arquivo,
             delimiter=delimitador
@@ -81,7 +82,7 @@ def ler_csv(nome_arquivo):
                 f"O arquivo {nome_arquivo} não possui cabeçalho."
             )
 
-        # Padroniza os nomes das colunas.
+        # Padroniza os nomes das colunas e remoce espaços desnecessários.
         leitor.fieldnames = [
             campo.strip().replace("\ufeff", "").lower()
             for campo in leitor.fieldnames

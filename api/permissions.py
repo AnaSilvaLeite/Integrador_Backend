@@ -1,5 +1,8 @@
 
 from rest_framework.permissions import BasePermission, SAFE_METHODS
+# BasePermission: É a classe base do DRF usada para criar regras de acesso personalizadas.
+# SAFE_METHODS: Métodos HTTP considerados "seguros" (apenas leitura, que não alteram dados no servidor): 'GET', 'HEAD' e 'OPTIONS'.
+
 
 class IsAdministratorOrReadOnly(BasePermission):
 

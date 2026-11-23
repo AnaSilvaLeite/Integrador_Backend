@@ -316,4 +316,4 @@ class ReadingViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsSuperUserOrReadOnly]
+    permission_classes = [IsSuperUserOrReadOnly] # Apenas SUPERUSER pode fazer CRUD de usuários
