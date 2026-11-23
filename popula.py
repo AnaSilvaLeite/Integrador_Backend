@@ -1,4 +1,3 @@
-
 import os
 import csv
 import django
@@ -31,9 +30,7 @@ User = get_user_model()
 DATA_DIR = BASE_DIR / "data" / "csv"
 
 
-# ==========================================================
 # LEITURA DOS ARQUIVOS CSV
-# ==========================================================
 
 def ler_csv(nome_arquivo):
     caminho = DATA_DIR / nome_arquivo
@@ -111,9 +108,7 @@ def ler_csv(nome_arquivo):
         return dados_csv
 
 
-# ==========================================================
 # VERIFICAÇÃO DAS COLUNAS OBRIGATÓRIAS
-# ==========================================================
 
 def verificar_colunas(nome_arquivo, dados, colunas):
     if not dados:
@@ -137,9 +132,7 @@ def verificar_colunas(nome_arquivo, dados, colunas):
         )
 
 
-# ==========================================================
 # IMPORTAÇÃO DOS USUÁRIOS
-# ==========================================================
 
 def importar_usuarios():
     print("\n--- Importando usuários ---")
@@ -177,9 +170,7 @@ def importar_usuarios():
         print(f"Usuário criado: {username}")
 
 
-# ==========================================================
 # IMPORTAÇÃO DOS AMBIENTES
-# ==========================================================
 
 def importar_ambientes():
     print("\n--- Importando ambientes ---")
@@ -209,9 +200,7 @@ def importar_ambientes():
             print(f"Ambiente já existente: {ponto}")
 
 
-# ==========================================================
 # IMPORTAÇÃO DOS MODELOS DE EQUIPAMENTOS
-# ==========================================================
 
 def importar_modelos():
     print("\n--- Importando modelos de equipamentos ---")
@@ -240,9 +229,7 @@ def importar_modelos():
             print(f"Modelo já existente: {nome}")
 
 
-# ==========================================================
 # IMPORTAÇÃO DOS MICROCONTROLADORES
-# ==========================================================
 
 def importar_microcontroladores():
     print("\n--- Importando microcontroladores ---")
@@ -294,9 +281,7 @@ def importar_microcontroladores():
             print(f"Microcontrolador já existente: {mac}")
 
 
-# ==========================================================
 # IMPORTAÇÃO DOS SENSORES
-# ==========================================================
 
 def importar_sensores():
     print("\n--- Importando sensores ---")
@@ -345,9 +330,7 @@ def importar_sensores():
             )
 
 
-# ==========================================================
 # IMPORTAÇÃO DAS LEITURAS
-# ==========================================================
 
 def importar_leituras():
     print("\n--- Importando leituras ---")
@@ -401,9 +384,7 @@ def importar_leituras():
             )
 
 
-# ==========================================================
 # EXECUÇÃO DA IMPORTAÇÃO
-# ==========================================================
 
 @transaction.atomic
 def popular_banco():
@@ -434,9 +415,7 @@ def popular_banco():
     print(f"Leituras: {Reading.objects.count()}")
 
 
-# ==========================================================
 # INÍCIO DO PROGRAMA
-# ==========================================================
 
 if __name__ == "__main__":
 
