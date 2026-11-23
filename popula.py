@@ -28,7 +28,7 @@ from api.models import (
 
 User = get_user_model()
 
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR / "data" / "csv"
 
 
 # ==========================================================
