@@ -210,6 +210,8 @@ O código analisado contém as seguintes funcionalidades extras do enunciado:
 - Geração de leituras simuladas: comando personalizado gerar_leituras, que cria medições para sensores ativos ligados a microcontroladores ativos.
 - Consulta rápida de leituras: endpoints para consultar as últimas 24 horas e a leitura mais recente de cada sensor.
 
+10. AlwaysData:
+https://analeite.alwaysdata.net/api/
 
 Projeto: Integrador Backend — API de Monitoramento Ambiental
 Instituição: SENAI Roberto Mange
