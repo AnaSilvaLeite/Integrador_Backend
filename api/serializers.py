@@ -1,4 +1,3 @@
-
 from rest_framework import serializers
 from .models import Environment, EquipmentModel, Microcontroller, Sensor, Reading, User 
 from django.contrib.auth.password_validation import validate_password # Responsável por validar senhas conforme as regras configuradas no Django
